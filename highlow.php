@@ -6,7 +6,7 @@ define('TOPEND', 100);
 
 //  game picks a random number between 1 and 100.
 $comp_pick = mt_rand(LOWEND, TOPEND);
-
+$counts = 0;
 
 
 
@@ -15,7 +15,7 @@ do {
 	fwrite (STDOUT, 'Pick a number between ' . LOWEND . ' and ' . TOPEND . '. ');
 
 	$player_guess = fgets(STDIN);
-
+		$counts++;
 
 	echo $player_guess;
 
@@ -29,19 +29,10 @@ do {
 		} 
 		elseif ($player_guess == $comp_pick) {
 			// - if a user guesses the number, STDOUT "GOOD GUESS!"
-			fwrite(STDOUT, "WINNER!!! \n");
+			fwrite(STDOUT, "WINNER!!! It took you $counts guesses to get it right! \n");
 			exit(0);
 		} 
 	}   while ($player_guess != $comp_pick);
-
-
-
-
-
-
-
-
-
 
 
 
