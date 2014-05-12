@@ -1,7 +1,21 @@
 <?php
- 
-define('LOWEND', 0);
-define('TOPEND', 100);
+
+if($argc != 3){
+	echo "Must enter two numbers to begin.\n";
+	exit(1);
+} 
+
+if ($argv[1] < $argv[2]) { 
+	define('LOWEND', (int)$argv[1]);
+	define('TOPEND', (int)$argv[2]);
+} elseif ($argv[1] > $argv[2]) {
+	define('LOWEND', (int)$argv[2]);
+	define('TOPEND', (int)$argv[1]);
+} else {
+	echo "Must enter two different numbers to begin.\n";
+	exit(1);
+}
+
 
 //  game picks a random number between 1 and 100.
 $comp_pick = mt_rand(LOWEND, TOPEND);
