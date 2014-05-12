@@ -31,7 +31,7 @@ fwrite (STDOUT, 'What is your name? ');
 
 $name = trim (fgets(STDIN));
 
-fwrite (STDOUT, 'Let us begin ' . $name . '! '. PHP_EOL);
+fwrite (STDOUT, 'Let us begin ' . $name . '! ');
 
 fwrite (STDOUT, 'Pick a number between ' . LOWEND .  ' and ' .  TOPEND . '! ');
 
