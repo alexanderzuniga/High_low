@@ -41,15 +41,20 @@ do {
 	$player_guess = fgets(STDIN);
 	$counts++;
 
-	if ($player_guess < $comp_pick) {
-		fwrite(STDOUT, "HIGHER!!! Guess Again. \n");
-	} elseif ($player_guess > $comp_pick) {
-		fwrite(STDOUT, "LOWER!!! Guess Again. \n");
-	
-	} elseif ($player_guess == $comp_pick) {
-		fwrite(STDOUT, "WINNER!!! It took you {$counts} guesses to get it right! \n");
-		exit(0);
+	if ($counts == 1){
+			fwrite(STDOUT, "Youz a bad mamma jamma!!!! CUSS YEEAHH!!! \n"); 
+		}
+		  elseif ($player_guess < $comp_pick) {
+			fwrite(STDOUT, "HIGHER!!! Guess Again. \n");
+
+		} elseif ($player_guess > $comp_pick) {
+			fwrite(STDOUT, "LOWER!!! Guess Again. \n");
+		
+		} elseif ($player_guess == $comp_pick) {
+			fwrite(STDOUT, "WINNER!!! It took you {$counts} guesses to get it right! \n");
+			exit(0);
 	} 
+	
 }   while ($player_guess != $comp_pick);
 
 ?>
