@@ -1,7 +1,11 @@
 <?php
 
+if(!is_numeric($argv[1]) || !is_numeric($argv[2])) {
+	echo "I have no idea what you're talking about....Numbers please!\n";
+	exit(1);
+}
 if($argc != 3){
-	echo "Must enter two numbers to begin.\n";
+	echo "Must enter \"php highlow.php\" and two differet numbers to begin.\n";
 	exit(1);
 } 
 
@@ -26,7 +30,7 @@ fwrite (STDOUT, 'What is your name? ');
 
 $name = trim (fgets(STDIN));
 
-fwrite (STDOUT, 'Greetings ' . $name . '! '. PHP_EOL);
+fwrite (STDOUT, 'Let us begin ' . $name . '! '. PHP_EOL);
 
 fwrite (STDOUT, 'Pick a number between ' . LOWEND .  ' and ' .  TOPEND . '! ');
 
